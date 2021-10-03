@@ -1,0 +1,32 @@
+<%- include('header'); -%>
+
+<body>
+  <div class="box" id="heading">
+    <h1> <%= listTitle %></h1>
+  </div>
+
+
+  <div class="box">
+
+    <% for( let i = 0; i < newListItems.length; i++ ) { %>
+    <div class="item">
+      <input class="checkbox" type="checkbox">
+      <p class="listItem"> <%= newListItems[i] %> </p>
+
+    </div>
+    <% } %>
+
+    <form class="item" action="/" method="POST">
+      <input type="text" name="listItem" id="listItem" placeholder="New item">
+      <button type="submit" name="list" value=<%= listTitle %>> + </button>
+    </form>
+  </div>
+  <!-- 
+   *Scriplet tag <% %> is used for basic control flow options only such as if else or while statements
+   Logic is to be done on Server only and scriplet tags must be used only in those cases where we need to manipulate the contents of variable inside the document.
+   -->
+
+
+
+</body>
+<%- include('footer'); -%>
